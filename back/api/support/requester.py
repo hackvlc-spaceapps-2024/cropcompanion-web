@@ -12,19 +12,19 @@ class Requester():
         LONGITUDE = -0.3608408203687458
 
         parameters = [
-            'PRECTOTCORR',
-            'PRECTOTCORR_SUM',
-            'SI_EF_MIN_TILTED_SURFACE',
-            'SI_EF_MAX_TILTED_SURFACE',
-            'SI_EF_TILTED_SURFACE'
+            'PRECTOTCORR', #PRECIPITATION CORRECTED
+            'PRECTOTCORR_SUM', #PRECIPITATION CORRECTED SUM
+            'SI_EF_MIN_TILTED_SURFACE', #MIN SOLAR IRRADIANCE
+            'SI_EF_MAX_TILTED_SURFACE', #MAX SOLAR IRRADIANCE
+            'SI_EF_TILTED_SURFACE' #SOLAR IRRADIANCE
         ]
 
         montly_params = [
-            'GWETPROF',
-            'T2M',
-            'QV2M',
-            'PRECTOTCORR',
-            'PRECTOTCORR_SUM',
+            'GWETPROF', #PROFILE SOIL MOISTURE
+            'T2M', #TEMPERATURE AT 2m RANGE
+            'QV2M', #SPECIFIC HUMMICITY AT 2m RANGE
+            'PRECTOTCORR', #PRECIPITATION CORRECTED
+            'PRECTOTCORR_SUM', #PRECIPITATION CORRECTED SUM
         ]
     
     def get_monthly(self):
