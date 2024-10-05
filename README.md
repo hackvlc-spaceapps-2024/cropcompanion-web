@@ -6,8 +6,14 @@ TBD
 ## Build container
 - $ make build
 
-## Start the container
+Once build you can start or stop the containers without building again
+
+## Start/stop the container
+Start the container
 - $ make up
+
+Stop the container
+- $ make down
 
 ## Get requests
 
@@ -16,3 +22,14 @@ TBD
 
 ### Climatology data
 - Visit http://localhost:8000/v1/clima
+
+# DEMO
+
+## First scenario (Solar Weather)
+- http://localhost:8000/v1/demo/solar
+
+## First scenario (Cloudy Weather)
+- http://localhost:8000/v1/demo/cloudy
+
+## First scenario (Rainy Weather)
+- http://localhost:8000/v1/demo/rainy
