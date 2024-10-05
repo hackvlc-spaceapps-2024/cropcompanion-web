@@ -6,6 +6,7 @@ class Orders(models.Model):
     lights = models.CharField(max_length=9, default=000000000)
     cover = models.BooleanField(default=False)
     irrigate = models.BooleanField(default=False)
+    irrigate_since = models.DateTimeField(auto_now=True)
 
 
 class Telemetry(models.Model):
