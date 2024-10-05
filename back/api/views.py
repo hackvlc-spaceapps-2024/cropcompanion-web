@@ -37,3 +37,7 @@ def rainy(request):
     # serialized_action = json.dumps(action)
     # print('AAAAAAAAAAAAAAAAA', serialized_action, file=sys.stderr)
     return JsonResponse(action)
+
+@api_view(['GET'])
+def status(request):
+    pass

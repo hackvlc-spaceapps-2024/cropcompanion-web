@@ -28,8 +28,8 @@ Stop the container
 ## First scenario (Solar Weather)
 - http://localhost:8000/v1/demo/solar
 
-## First scenario (Cloudy Weather)
+## Second scenario (Cloudy Weather)
 - http://localhost:8000/v1/demo/cloudy
 
-## First scenario (Rainy Weather)
+## Third scenario (Rainy Weather)
 - http://localhost:8000/v1/demo/rainy
