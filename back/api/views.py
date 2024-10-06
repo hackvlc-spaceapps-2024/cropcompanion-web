@@ -90,3 +90,15 @@ def get_status(request):
 
     print('GET Status')
     return JsonResponse(Repository.get_last())
+
+@api_view(['POST'])
+def set_orders(request):
+    print('POST Order', file=sys.stderr)
+    body_unicode = request.body.decode('utf-8')
+
+    formatted_body = json.loads(body_unicode)
+    lights = formatted_body["lights"]
+    cover = formatted_body["cover"]
+    irrigate = formatted_body["irrigate"]
+    orders = models.Orders(lights=lights, cover=cover, irrigate=irrigate)
+    orders.save()
