@@ -48,7 +48,7 @@ def orders(request):
     except:
         orders = {}
 
-    orders = orders.serialise()
+    orders = orders.serialise() if orders else {}
     return JsonResponse(orders)
 
 
