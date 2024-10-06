@@ -71,7 +71,7 @@ def status(request):
 
 @api_view(['GET'])
 def get_status(request):
-
+    
     return JsonResponse(Repository.get_last(), safe=False)
 
 @api_view(['GET'])

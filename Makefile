@@ -12,3 +12,6 @@ create_app:
 
 scaffold_django:
 	docker compose run --rm django_scaffolder django-admin startproject back
+
+warning:
+	curl 192.168.230.130:8000/v1/warning
