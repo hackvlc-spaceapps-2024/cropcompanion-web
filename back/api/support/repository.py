@@ -10,7 +10,7 @@ class Repository:
     
     @staticmethod
     def get_last():
-        return Repository.status[-1]
+        return Repository.status[0]
     
     @staticmethod
     def save(status):
