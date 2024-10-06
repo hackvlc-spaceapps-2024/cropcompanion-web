@@ -58,7 +58,7 @@ def status(request):
     body_unicode = request.body.decode('utf-8')
     formated_body = json.loads(body_unicode)
     
-    if not Repository.warning:
+    if not Repository.alert:
         pretty_body = json.dumps(formated_body, indent=2)
         print(pretty_body, file=sys.stderr)
         Repository.save(formated_body)
