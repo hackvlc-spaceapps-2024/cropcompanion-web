@@ -1,7 +1,7 @@
 from django.shortcuts import render #type: ignore
 from django.http import JsonResponse # type: ignore
 from rest_framework.decorators import api_view # type: ignore
-from django.core import serializers
+# from django.core import serializers
 
 from api.support.requester import Requester
 from api.support.repository import Repository
@@ -56,18 +56,18 @@ def orders(request):
 def status(request):
     print('POST Status:', file=sys.stderr)
     body_unicode = request.body.decode('utf-8')
-
     formated_body = json.loads(body_unicode)
-    pretty_body = json.dumps(formated_body, indent=2)
-    print(pretty_body, file=sys.stderr)
-    print('Last:', file=sys.stderr)
-
-    Repository.save(formated_body)
-    a = Repository.get_last()
-    pretty_a = json.dumps(a, indent=2)
-    print(pretty_a)
-
-    return JsonResponse(Repository.get_last(), safe=False)
+    
+    if not Repository.warning:
+        pretty_body = json.dumps(formated_body, indent=2)
+        print(pretty_body, file=sys.stderr)
+        Repository.save(formated_body)
+        return JsonResponse(Repository.get_last(), safe=False)
+    else:
+        print('Warning:', file=sys.stderr)
+        alert = Repository.get_last()
+        print(alert, file=sys.stderr)
+        return JsonResponse(Repository.get_last(), safe=False)
 
 @api_view(['GET'])
 def get_status(request):
