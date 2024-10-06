@@ -65,7 +65,7 @@ def status(request):
 
     Repository.save(formated_body)
     
-    return JsonResponse(Repository.show(), safe=False)
+    return JsonResponse(Repository.get_last(), safe=False)
 
 @api_view(['GET'])
 def purge(request):
