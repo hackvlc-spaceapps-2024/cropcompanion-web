@@ -43,9 +43,9 @@ def rainy(request):
 @api_view(['GET'])
 def orders(request):
     try:
-        orders = models.Orders.objects.all().values_list('id', flat=True).order_by('-id').first()
+        orders = models.Orders.objects.all().order_by('-id').first()
     except:
-        orders = []
+        orders = {}
 
-    orders = serializers.serialize("json", orders)
+    orders = orders.serialise()
     return JsonResponse(orders)
