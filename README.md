@@ -40,11 +40,11 @@ All the scenarios are in the file back.api.support.situation_factory
 
 #### Sample request
 
-T2M (Temperature)
-SI_EF_TILTED_HORIZONTAL (Solar Irradiance)
-GWETPROF (Soil Moisture)
-QV2M (Hummidity)
-PRECTOTCORR (Water Height)
+- T2M (Temperature)
+- SI_EF_TILTED_HORIZONTAL (Solar Irradiance)
+- GWETPROF (Soil Moisture)
+- QV2M (Hummidity)
+- PRECTOTCORR (Water Height)
 
 ``` JSON
 {
