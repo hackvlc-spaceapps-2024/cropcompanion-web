@@ -54,8 +54,14 @@ def orders(request):
 @api_view(['POST'])
 def status(request):
     print('POST Status', file=sys.stderr)
+    __body = {
+        'T2M': 27.51, #TEMP
+        'SI_EF_TILTED_HORIZONTAL': 	26.14, #SOLAR LIGHT
+        'GWETPROF': 0.31, #HUMMIDITY IN SOILD
+        'QV2M': 7.24, #HUMMIDIFY SPECIFIC
+        'PRECTOTCORR': 0 #WATER HEIGHT
+        }
     return JsonResponse({'message': 'POST'})
-    pass
 
 @api_view(['GET'])
 def status(request):
