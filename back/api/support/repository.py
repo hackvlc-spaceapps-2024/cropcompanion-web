@@ -19,6 +19,7 @@ class Repository:
         print(Repository.alert, file=sys.stderr)
         if Repository.alert:
             Repository.warning()
+            return
         else:
             Repository.status.insert(0, status)
         
