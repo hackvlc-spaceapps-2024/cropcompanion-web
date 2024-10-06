@@ -1,5 +1,7 @@
 from api.support.situation_factory import SituationFactory
 
+import sys
+
 class Repository:
     status = []
     alert = False
@@ -14,6 +16,7 @@ class Repository:
     
     @staticmethod
     def save(status):
+        print(Repository.alert, file=sys.stderr)
         if Repository.alert:
             Repository.warning()
         else:
