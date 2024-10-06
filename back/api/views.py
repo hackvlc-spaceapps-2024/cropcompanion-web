@@ -102,3 +102,4 @@ def set_orders(request):
     irrigate = formatted_body["irrigate"]
     orders = models.Orders(lights=lights, cover=cover, irrigate=irrigate)
     orders.save()
+    return JsonResponse({"message": "Order Received"})
