@@ -26,6 +26,10 @@ class Repository:
         return
 
     def warning():
+        if Repository.alert:
+            Repository.alert = False
+            return Repository.get_last()
+        
         Repository.alert = True
 
         warning_status = {
