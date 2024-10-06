@@ -73,7 +73,7 @@ def get_status(request):
 @api_view(['GET'])
 def warning(request):
 
-    return JsonResponse(Repository.warning())
+    return JsonResponse(Repository.warning(), safe=False)
 
 @api_view(['GET'])
 def purge(request):

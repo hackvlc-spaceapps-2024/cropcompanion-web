@@ -46,7 +46,7 @@ class Repository:
             }
         Repository.status = [warning_status]
 
-        return Repository.get_last()
+        return Repository.status
     
     @staticmethod
     def purge():
