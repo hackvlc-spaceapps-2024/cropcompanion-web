@@ -2,7 +2,7 @@ from api.support.situation_factory import SituationFactory
 
 class Repository:
     status = []
-    warning = False
+    alert = False
 
     @staticmethod
     def show():
@@ -14,13 +14,13 @@ class Repository:
     
     @staticmethod
     def save(status):
-        if Repository.warning:
+        if Repository.alert:
             Repository.warning()
         else:
             Repository.status.insert(0, status)
 
     def warning():
-        Repository.warning = True
+        Repository.alert = True
 
         warning_status = {
                 'Type': 0,
