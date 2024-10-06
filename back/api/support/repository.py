@@ -39,7 +39,7 @@ class Repository:
                     'light': False,
                 }
             }
-        Repository.status.insert(0, warning_status)
+        Repository.status = [warning_status]
 
         return Repository.get_last()
     
