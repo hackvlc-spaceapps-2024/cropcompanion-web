@@ -85,4 +85,4 @@ def purge(request):
 def get_status(request):
 
     print('GET Status')
-    return JsonResponse({ 'message': 'GET' })
+    return JsonResponse(Repository.get_last())
