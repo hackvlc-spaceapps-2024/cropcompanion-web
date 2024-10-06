@@ -2,9 +2,9 @@ POST http://localhost:8000/v1/status
 content-type: application/json
 
 {
-    "T2M": 27.51, 
+    "T2M": 12.21, 
     "SI_EF_TILTED_HORIZONTAL": 26.14,
-    "GWETPROF": 0.31,
-    "QV2M": 7.24,
+    "GWETPROF": 1.31,
+    "QV2M": 2.24,
     "PRECTOTCORR": 0
 }

@@ -56,14 +56,16 @@ def orders(request):
 def status(request):
     print('POST Status', file=sys.stderr)
     body_unicode = request.body.decode('utf-8')
-    print('BODY', body_unicode, file=sys.stderr)
 
-    serialized = json.loads(body_unicode)
-    # transformed = 
+    formated_body = json.loads(body_unicode)
+    pretty_body = json.dumps(formated_body, indent=2)
+    print(pretty_body, file=sys.stderr)
 
-    Repository.save(serialized)
+    # serialized = json.loads(body_unicode)
+
+    Repository.save(formated_body)
     
-    return JsonResponse(Repository.show(), safe=False)
+    return JsonResponse(Repository.get_last(), safe=False)
 
 @api_view(['GET'])
 def purge(request):
