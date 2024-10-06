@@ -63,6 +63,8 @@ def status(request):
 
     if not Repository.alert:
         Repository.save(formated_body)
+    else:
+        Repository.warning()
     
     return JsonResponse(Repository.get_last(), safe=False)
 
