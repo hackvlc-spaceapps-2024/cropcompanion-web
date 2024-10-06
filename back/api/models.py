@@ -8,6 +8,14 @@ class Orders(models.Model):
     irrigate = models.BooleanField(default=False)
     irrigate_since = models.DateTimeField(auto_now=True)
 
+    def serialise(self):
+        return {
+            'lights': self.lights,
+            'cover': self.cover,
+            'irrigate': self.irrigate,
+            'irrigate_since': self.irrigate_since
+            }
+
 
 class Telemetry(models.Model):
     ground_humidity = models.IntegerField(default=0)
