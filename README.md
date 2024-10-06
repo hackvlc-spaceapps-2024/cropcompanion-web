@@ -33,3 +33,14 @@ Stop the container
 
 ## Third scenario (Rainy Weather)
 - http://localhost:8000/v1/demo/rainy
+
+# ENDPOINTS
+
+## Update Station Status
+POST - http://localhost:8000/v1/status
+
+Update the station last data to the backend
+
+GET - http://localhost:8000/v1/status
+
+Get the station's last data
