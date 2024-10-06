@@ -13,7 +13,8 @@ class SituationFactory:
                 'ok': False,
                 'description': 'High solar irradiance, cover and irrigate',
                 'cover': True,
-                'irrigate': True
+                'irrigate': True,
+                'light': False,
             }
         }
         return action
@@ -31,7 +32,9 @@ class SituationFactory:
                 'ok': True,
                 'description': 'Climate stable',
                 'cover': False,
-                'irrigate': False
+                'irrigate': False,
+                'light': True,
+
             }
         }
         return action
@@ -50,8 +53,9 @@ class SituationFactory:
                 'ok': False,
                 'description': 'Critical weather, heavy rain',
                 'cover': True,
-                'irrigate': False
+                'irrigate': False,
+                'light': True,
+
             }
         }
-        print('BBBBBBBBBBBBBB', action, file=sys.stderr)
         return action

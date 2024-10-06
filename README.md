@@ -28,8 +28,50 @@ Stop the container
 ## First scenario (Solar Weather)
 - http://localhost:8000/v1/demo/solar
 
-## First scenario (Cloudy Weather)
+## Second scenario (Cloudy Weather)
 - http://localhost:8000/v1/demo/cloudy
 
-## First scenario (Rainy Weather)
+## Third scenario (Rainy Weather)
 - http://localhost:8000/v1/demo/rainy
+
+### Info
+
+All the scenarios are in the file back.api.support.situation_factory
+
+#### Sample request
+
+- T2M (Temperature)
+- SI_EF_TILTED_HORIZONTAL (Solar Irradiance)
+- GWETPROF (Soil Moisture)
+- QV2M (Hummidity)
+- PRECTOTCORR (Water Height)
+
+``` JSON
+{
+    "data": {
+        "T2M": 27.51, 
+        "SI_EF_TILTED_HORIZONTAL": 26.14, 
+        "GWETPROF": 0.31, 
+        "QV2M": 7.24, 
+        "PRECTOTCORR": 0
+        }, 
+        "action": {
+            "ok": false, 
+            "description": "High solar irradiance, cover and irrigate", 
+            "cover": true, 
+            "irrigate": true, 
+            "light": false
+        }
+    }
+
+```
+# ENDPOINTS
+
+## Update Station Status
+POST - http://localhost:8000/v1/status
+
+Update the station last data to the backend
+
+GET - http://localhost:8000/v1/status
+
+Get the station's last data
