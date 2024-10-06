@@ -33,7 +33,7 @@ class Repository:
         Repository.alert = True
 
         warning_status = {
-                'Type': 0,
+                'type': 0,
                 'Prevition': {
                     'T2M': 35.89,
                     'SI_EF_TILTED_HORIZONTAL': 	26.14,
