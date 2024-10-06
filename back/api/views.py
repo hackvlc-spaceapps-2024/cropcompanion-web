@@ -61,11 +61,8 @@ def status(request):
     pretty_body = json.dumps(formated_body, indent=2)
     print(pretty_body, file=sys.stderr)
 
-    if not Repository.alert:
-        Repository.save(formated_body)
-    else:
-        Repository.warning()
-    
+    Repository.save(formated_body)
+
     return JsonResponse(Repository.get_last(), safe=False)
 
 @api_view(['GET'])

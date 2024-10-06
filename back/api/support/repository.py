@@ -18,6 +18,8 @@ class Repository:
             Repository.warning()
         else:
             Repository.status.insert(0, status)
+        
+        return
 
     def warning():
         Repository.alert = True
