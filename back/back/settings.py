@@ -28,9 +28,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.230.130',
-    'localhost'
+    'localhost',
+    '0.0.0.0'
 ]
 
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "credentials",
+    "authorization",
+    "content-type",
+    "Access-Control-Allow-Credentials",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 

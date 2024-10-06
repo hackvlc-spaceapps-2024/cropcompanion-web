@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view # type: ignore
 from django.core import serializers
 
 from api.support.requester import Requester
+from api.support.repository import Repository
 from api.support.situation_factory import SituationFactory
 from api import models
 
@@ -54,17 +55,24 @@ def orders(request):
 @api_view(['POST'])
 def status(request):
     print('POST Status', file=sys.stderr)
-    __body = {
-        'T2M': 27.51, #TEMP
-        'SI_EF_TILTED_HORIZONTAL': 	26.14, #SOLAR LIGHT
-        'GWETPROF': 0.31, #HUMMIDITY IN SOILD
-        'QV2M': 7.24, #HUMMIDIFY SPECIFIC
-        'PRECTOTCORR': 0 #WATER HEIGHT
-        }
-    return JsonResponse({'message': 'POST'})
+    body_unicode = request.body.decode('utf-8')
+    print('BODY', body_unicode, file=sys.stderr)
+
+    serialized = json.loads(body_unicode)
+    # transformed = 
+
+    Repository.save(serialized)
+    
+    return JsonResponse(Repository.show(), safe=False)
 
 @api_view(['GET'])
-def status(request):
+def purge(request):
+    Repository.purge()
+
+    return JsonResponse({ 'message': 'Database purged' })
+
+@api_view(['GET'])
+def get_status(request):
 
     print('GET Status')
-    return JsonResponse({'message': 'GET'})
+    return JsonResponse({ 'message': 'GET' })

@@ -7,6 +7,7 @@ urlpatterns = [
     path('monthly', views.monthly, name='monthly'),
     path('clima', views.clima, name='clima'),
     path('status', views.status, name='status'),
+    path('purge', views.purge, name='purge'),
     path('demo/solar', views.solar, name='solar'),
     path('demo/cloudy', views.cloudy, name='cloudy'),
     path('demo/rainy', views.rainy, name='rainy'),

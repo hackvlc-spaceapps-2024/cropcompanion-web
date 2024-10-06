@@ -1,0 +1,10 @@
+POST http://localhost:8000/v1/status
+content-type: application/json
+
+{
+    "T2M": 27.51, 
+    "SI_EF_TILTED_HORIZONTAL": 26.14,
+    "GWETPROF": 0.31,
+    "QV2M": 7.24,
+    "PRECTOTCORR": 0
+}

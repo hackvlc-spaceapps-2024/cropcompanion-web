@@ -75,3 +75,7 @@ Update the station last data to the backend
 GET - http://localhost:8000/v1/status
 
 Get the station's last data
+
+GET - http://localhost:8000/v1/purge
+
+Reset the station's data
