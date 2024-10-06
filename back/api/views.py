@@ -61,11 +61,20 @@ def status(request):
     pretty_body = json.dumps(formated_body, indent=2)
     print(pretty_body, file=sys.stderr)
 
-    # serialized = json.loads(body_unicode)
-
-    Repository.save(formated_body)
+    if not Repository.warning:
+        Repository.save(formated_body)
     
     return JsonResponse(Repository.get_last(), safe=False)
+
+@api_view(['GET'])
+def get_status(request):
+
+    return JsonResponse(Repository.get_last(), safe=False)
+
+@api_view(['GET'])
+def warning(request):
+
+    return JsonResponse(Repository.warning())
 
 @api_view(['GET'])
 def purge(request):

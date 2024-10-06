@@ -8,3 +8,5 @@ content-type: application/json
     "QV2M": 2.24,
     "PRECTOTCORR": 0
 }
+###
+GET http://localhost:8000/v1/warning
