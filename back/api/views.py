@@ -51,6 +51,14 @@ def orders(request):
     return JsonResponse(orders)
 
 
+@api_view(['POST'])
+def status(request):
+    print('POST Status', file=sys.stderr)
+    return JsonResponse({'message': 'POST'})
+    pass
+
 @api_view(['GET'])
 def status(request):
-    pass
+
+    print('GET Status')
+    return JsonResponse({'message': 'GET'})
